@@ -1,1 +1,50 @@
-Hello World
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+  <title>Big Data</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+ 
+  <div id="chart">
+  </div>
+  <!--<form class = "allText">
+    <label><input type="radio" name="dataset" value="light"> Light</label>
+    <label><input type="radio" name="dataset" value="dark" checked> Dark</label>
+  </form>
+ 
+  <div class="centreText allText">
+     <p <span id="aboveTitle" class ="majorText">thousands of languages</p>
+      <p id="centreTitle" class ="majorText">hundreds of skills, one team</p>
+      <p id="belowTitle" class ="majorText">we’re all in the data business</p>
+       <p id="legendTitle" class ="minorText"><br><br><br><br>activities</p>
+  </div>
+  -->
+  <div id="tooltip" class="hidden">
+      <p id="toolHead" class ="majorText"></p>
+      <p id="toolValue" class ="minorText"></p>
+  </div>
+
+
+
+
+  <script src="script.js"></script>
+  <script>
+  var params = {data: "BigDataCategories.csv", width:960,height:650,lighting:"dark"};
+  var query = window.location.search.substring(1);
+   
+  var vars = query.split("&");
+  vars.forEach(function(v) {
+      p=v.split("=");
+      params[p[0]]=p[1]
+  })
+  vis.init(params);
+
+  //update();
+  //initEvents();
+
+  </script>
+</body>
+</html>
