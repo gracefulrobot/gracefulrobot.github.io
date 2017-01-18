@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
-  <title>Big Data</title>
-  <link href="style.css" rel="stylesheet">
+  
+    <title>Big Data Roles</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+
+    <!-- Styling -->
+    <link href="style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="d3.min.js"></script>
+
 </head>
 <body>
-  <script src="js/d3.min.js"></script>
  
-  <div id="chart">
-  </div>
-  <!--<form class = "allText">
-    <label><input type="radio" name="dataset" value="light"> Light</label>
-    <label><input type="radio" name="dataset" value="dark" checked> Dark</label>
-  </form>
-  -->
-  <div id="tooltip" class="hidden">
-      <p id="toolHead" class ="majorText"></p>
-      <p id="toolValue" class ="minorText"></p>
-  </div>
+    <div id="chart">
+    </div>
+    <!--<form class = "allText">
+      <label><input type="radio" name="dataset" value="light"> Light</label>
+      <label><input type="radio" name="dataset" value="dark" checked> Dark</label>
+    </form>
+    -->
+    <div id="tooltip" class="hidden">
+        <p id="toolHead" class ="majorText"></p>
+        <p id="toolValue" class ="minorText"></p>
+    </div>
 
 
+    <script src="js/script.js"></script>
 
+    <script>
+      var params = {data: "BigDataCategories.csv", width:960,height:650,lighting:"dark"};
+      var query = window.location.search.substring(1);
+       
+      var vars = query.split("&");
+      vars.forEach(function(v) {
+          p=v.split("=");
+          params[p[0]]=p[1]
+      })
+      vis.init(params);
 
-  <script src="js/script.js"></script>
-  <script>
-  var params = {data: "BigDataCategories.csv", width:960,height:650,lighting:"dark"};
-  var query = window.location.search.substring(1);
-   
-  var vars = query.split("&");
-  vars.forEach(function(v) {
-      p=v.split("=");
-      params[p[0]]=p[1]
-  })
-  vis.init(params);
+    </script>
 
-  //update();
-  //initEvents();
-
-  </script>
 </body>
 </html>
